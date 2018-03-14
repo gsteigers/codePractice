@@ -1,3 +1,6 @@
+/**
+ * Given an array that can contain subarrays, calculate the sum of all integers
+ */
 
 function sum(arr) {
     if(arr instanceof Array) {

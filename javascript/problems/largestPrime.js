@@ -1,22 +1,29 @@
-var number = 600851475143;
-var primes = [];
+/**
+ * Given a max value, find the largest prime number under that value
+ */
 
-for(var i = 2; i <= number; i++) {
-    if(number % i === 0) {
-        var isPrime = true;
-        for(var j = 2; j < (i / 2); j++) {
-            if(i % j == 0) {
-                isPrime = false;
+ var number = 600851475143;
+
+function findMaxPrime(number) {
+    var primes = [];
+    //find all prime numbers
+    for(var i = 2; i <= number; i++) {
+        if(number % i === 0) {
+            var isPrime = true;
+            for(var j = 2; j < (i / 2); j++) {
+                if(i % j == 0) {
+                    isPrime = false;
+                }
+            }
+    
+            if(isPrime) {
+                number /= i;
+                primes.push(i);
             }
         }
-
-        console.log(isPrime);
-        if(isPrime) {
-            number /= i;
-            primes.push(i);
-        }
     }
+
+    return primes[primes.length - 1];
 }
 
-var max = primes[primes.length - 1];
-console.log("max = " + max);
+console.log(findMaxPrime(600851475143));
