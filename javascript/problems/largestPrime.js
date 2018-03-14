@@ -2,8 +2,6 @@
  * Given a max value, find the largest prime number under that value
  */
 
- var number = 600851475143;
-
 function findMaxPrime(number) {
     var primes = [];
     //find all prime numbers

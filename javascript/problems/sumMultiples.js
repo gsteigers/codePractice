@@ -1,18 +1,23 @@
-var multThree = [];
+/**
+ * Given a range and an array of integers, find the summation of all instances of each unique multiple of those integers
+ */
 
-for(var i = 3; i < 1000; i += 3) {
-    multThree.push(i);
-}
-
-for(var j = 5; j < 1000; j += 5) {
-    if(!multThree.includes(j)) {
-        multThree.push(j);
+function calcSumOfMultiples(range, multiples) {
+    var uniqueMultiples = [];
+    for(var i = 0; i < multiples.length; i++) {
+        for(var j = multiples[i]; j < range; j += multiples[i]) {
+            if(!uniqueMultiples.includes(j)) {
+                uniqueMultiples.push(j);
+            }
+        }
     }
+
+    var sumOfMultiples = 0;
+    for(var k = 0; k < uniqueMultiples.length; k++) {
+        sumOfMultiples += uniqueMultiples[k];
+    }
+
+    return sumOfMultiples;
 }
 
-var sumOfMultiples = 0;
-for(var k = 0; k < multThree.length; k++) {
-    sumOfMultiples += multThree[k];
-}
-
-console.log(sumOfMultiples);
+console.log(calcSumOfMultiples(1000, [3,5]));

@@ -2,8 +2,6 @@
  * Given a max value, calculate the sum of all even numbers in the fibonacci sequence 
  * that doesn't exceed that max
  */
-
- var max = 4000000;
  
  function sumEvenFib(max) {
      var fibonacci = [1, 2];
@@ -31,4 +29,4 @@
      return sum;
  }
 
-console.log(sumEvenFib(max));
+console.log(sumEvenFib(4000000));
